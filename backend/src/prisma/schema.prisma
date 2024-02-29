@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://Administrator:1234567890@localhost:5432/recipes"
+}
+
+model Recipe {
+  id          Int                @id @default(autoincrement())
+  title       String
+  instruction String
+  ingredients RecipeIngredient[]
+}
+
+model Ingredient {
+  id      Int                @id @default(autoincrement())
+  name    String
+  recipes RecipeIngredient[]
+}
+
+model RecipeIngredient {
+  id            Int       @id @default(autoincrement())
+  recipe        Recipe    @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  recipeId      Int
+  ingredient    Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Cascade)
+  ingredientId  Int
+  amount        String    // Renamed 'quantity' to 'amount' for clarity
+
+  @@unique([recipeId, ingredientId])
+}
