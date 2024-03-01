@@ -30,7 +30,7 @@ TypeScript, Node.js, Express.js, Prisma, PostgreSQL, React 18, React Hooks, Reac
 
 ## Screenshots
 
-![App Screenshot]()
+![App Screenshot](https://raw.githubusercontent.com/hvnsoft/RecipeManager/main/overview.jpg)
 
 
 ## API Reference
@@ -106,6 +106,7 @@ After installation of Postgres 16
 ```bash
   C:\Program Files\PostgreSQL\16\bin>pg_ctl start -D "<db_path>"
 ```
+![App Screenshot](https://raw.githubusercontent.com/hvnsoft/RecipeManager/main/db_hosting.jpg)
 
 To install packages, run the following command
 ```bash
