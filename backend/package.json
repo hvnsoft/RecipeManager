@@ -1,11 +1,11 @@
 {
-  "name": "recipe-manager",
+  "name": "backend",
   "version": "1.0.0",
   "description": "home task",
   "main": "src/server.ts",
   "scripts": {
-    "test": "jest",
-    "start": "nodemon src/server.ts",
+    "test": "jest --watchAll",
+    "start": "ts-node src/server.ts",
     "server": "concurrently \"npm run watch-tsc\" \"npm run watch-deploy\""
   },
   "keywords": [],
